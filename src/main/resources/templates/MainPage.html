@@ -4,11 +4,42 @@
     <title>Kategorijos receptai</title>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script>JavaScript.js</script>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet"
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
           crossorigin="anonymous">
 </head>
 <body>
+<div class="container">
+    <h1>Recepto įdėjimas</h1>
+    <hr>
+    <h2>Įveskite recepto duomenis</h2>
+
+    <form th:action="@{/knygos/idejo_knyga}" th:object="${knygos}" method="POST">
+        <input type="hidden" th:field="*{id}">
+        <input th:field="*{pavadinimas}" type="text"  placeholder="knygos pavadinimas" class="form-control mb-4 col-4">
+        <input th:field="*{puslapiuskait}" type="text"  placeholder="knygos puslapiu skaicius" class="form-control mb-4 col-4">
+        <input th:field="*{aprasymas}" type="text"  placeholder="aprasymas" class="form-control mb-4 col-4">
+        <input th:field="*{turinys}" type="text"  placeholder="turinys" class="form-control mb-4 col-4">
+        <input th:field="*{kiekis}" type="text" placeholder="kiek siu knygu turime">
+        <select th:field="*{knygosKategorijos}" class="form-control" id="dropDownList">
+            <option th:each="kategorija : ${kategorijos}" th:value="${kategorijos.getId()}" th:text="${kategorija.getPavadinimas()}"></option>
+        </select>
+        <br>
+        <select th:field="*{receptoKurejas}" class="form-control" id="dropDownList2">
+            <option value="0">Pasirinkite kureja</option>
+            <option th:each="vartotojas : ${vartotojei}" th:value="${vartotojas.getId()}" th:text="${vartotojas.getUsername()}"></option>
+        </select>
+
+        <button type="submit" class="btn btn-info col-2">Išsaugokite receptą</button>
+
+    </form>
+
+    <hr>
+
+    <a th:href="@{/}"> Grįžti atgal</a>
+</div>
 </body>
 </html>

@@ -5,7 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface knygosRepository extends JpaRepository<Knygos, Integer> {
+public interface KnygosRepository extends JpaRepository<Knygos, Integer> {
 
     Knygos findByPavadinimas (String pavadinimas);
 }

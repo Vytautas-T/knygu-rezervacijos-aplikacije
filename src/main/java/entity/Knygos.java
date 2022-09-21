@@ -13,7 +13,7 @@ public class Knygos {
 
     private String pavadinimas;
 
-    private int PuslapiuSait;
+    private int puslapiuSait;
 
     private String aprasymas;
 
@@ -53,7 +53,7 @@ public class Knygos {
     public Knygos(int id, String pavadinimas, int puslapiuSait, String aprasymas, String turinys, int kiekis, Set<Knygos> knygosKategorijos, Set<Knygos> knygosAutorius, Set<Knygos> knygosMekstamosVartotojo) {
         this.id = id;
         this.pavadinimas = pavadinimas;
-        PuslapiuSait = puslapiuSait;
+        this.puslapiuSait = puslapiuSait;
         this.aprasymas = aprasymas;
         this.turinys = turinys;
         this.kiekis = kiekis;
@@ -79,11 +79,11 @@ public class Knygos {
     }
 
     public int getPuslapiuSait() {
-        return PuslapiuSait;
+        return puslapiuSait;
     }
 
     public void setPuslapiuSait(int puslapiuSait) {
-        PuslapiuSait = puslapiuSait;
+        this.puslapiuSait = puslapiuSait;
     }
 
     public String getAprasymas() {
@@ -139,7 +139,7 @@ public class Knygos {
         return "Knygos{" +
                 "id=" + id +
                 ", pavadinimas='" + pavadinimas + '\'' +
-                ", PuslapiuSait=" + PuslapiuSait +
+                ", PuslapiuSait=" + puslapiuSait +
                 ", aprasymas='" + aprasymas + '\'' +
                 ", turinys='" + turinys + '\'' +
                 ", KnygosKategorijos=" + KnygosKategorijos +
